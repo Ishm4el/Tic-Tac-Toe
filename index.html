@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Tic-Tac-Toe</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
         <div id="container">
@@ -13,18 +14,20 @@
                 <div id="sidebar">
                     <div>
                         <p>CURRENT PLAYER</p>
+                        <p id="currentPlayer">Ish</p>
+                        <div id="currentMarker"></div>
                     </div>
                 </div>
                 <div id="game">
-                    <div id="top-left">X</div>
-                    <div id="top-mid">O</div>
-                    <div id="top-right"></div>
-                    <div id="mid-left"></div>
-                    <div id="mid-mid"></div>
-                    <div id="mid-right"></div>
-                    <div id="bot-left"></div>
-                    <div id="bot-mid"></div>
-                    <div id="bot-right"></div>
+                    <div id="top-left" data-position="0">X</div>
+                    <div id="top-mid" data-position="1">O</div>
+                    <div id="top-right" data-position="2"></div>
+                    <div id="mid-left" data-position="3"></div>
+                    <div id="mid-mid" data-position="4"></div>
+                    <div id="mid-right" data-position="5"></div>
+                    <div id="bot-left" data-position="6"></div>
+                    <div id="bot-mid" data-position="7"></div>
+                    <div id="bot-right" data-position="8"></div>
                 </div>
             </div>
         </div>

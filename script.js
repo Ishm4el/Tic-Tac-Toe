@@ -2,7 +2,6 @@
 // 0 1 2
 // 3 4 5
 // 6 7 8
-const readline = require('readline');
 const game = (function () {
     
     const x = 1;
@@ -37,33 +36,20 @@ const game = (function () {
     }
 
     // The main game
-    async function run() {
+    function run() {
         let playerTurn = x; // general rule is that X goes first.
-        do {
-            await (() => {
-                const rl = readline.createInterface(process.stdin, process.stdout);
-                return new Promise(resolve => rl.question('0 | 1 | 2\n3 | 4 | 5\n6 | 7 | 8\n', place => {
-                    rl.close();
-                    board[place] = playerTurn;
-                    playerTurn = playerTurn === x ? o : x;
-                    console.log(printBoard());
-                    resolve();
-                }));
-            })();
-        } while (determineVictory())
-    }
-
-    // Prints the board - indicating which placements have been marked.
-    function printBoard() {
-        let printing = "=======\n|"
-        for (let i = 0; i < board.length; i++) {
-            printing += board[i] === undefined ? ".|" : board[i] === x ? "X|" : "O|";
-            if (i === 2 || i === 5)
-                printing += "\n|";
-        }
-        return printing += "\n=======\n";
+        const plots = document.querySelectorAll("#game > div");
+        plots.forEach((element) => {
+            element.addEventListener('click', () => {
+                element.innerHTML = playerTurn === x ? 'X' : 'O';
+                board[element.dataset] = playerTurn;
+                playerTurn = playerTurn === x ? o : x;
+                console.log(playerTurn);
+            });
+        });
     }
     return {run, determineVictory};
 })();
 
+const displayMarker = document.querySelector("#currentMarker");
 console.log(game.run()); // run the game.

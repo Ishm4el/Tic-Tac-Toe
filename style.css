@@ -50,6 +50,14 @@ p {
     gap: 1vw;
 }
 
+#game > div:hover {
+    background-color: rgb(196, 212, 226);
+}
+
+#game > div:active {
+    background-image: repeating-linear-gradient(135deg, rgb(84, 153, 185), rgb(198, 230, 219));
+}
+
 #top-left, #top-mid, #top-right, #mid-left, #mid-mid, #mid-right, #bot-left, #bot-mid, #bot-right {
     background-color: rgba(240, 248, 255, 0.521);
     height: 100%;
@@ -59,4 +67,3 @@ p {
     align-items: center;
     font-size: min(15vh, 15vw);
 }
-
