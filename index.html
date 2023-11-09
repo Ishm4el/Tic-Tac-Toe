@@ -8,28 +8,43 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-        <div id="container">
-            <div id="header">TIC-TAC-TOE</div>
-            <div id="dashboard">
-                <div id="sidebar">
-                    <div>
-                        <p>CURRENT PLAYER</p>
-                        <p id="currentPlayer">Ish</p>
-                        <div id="currentMarker"></div>
-                    </div>
+    <dialog id="createPlayer">
+        <form>
+            <h1>TIC-TAC-TOE</h1>
+            <div class="player-name-input">
+                <label for="player-one">Player X</label>
+                <input type="text" name="playerOne" id="player-one" placeholder="Enter player X's name">
+            </div>
+            <div class="player-name-input">
+                <label for="player-two">Player O</label>
+                <input type="text" name="playerTwo" id="player-two" placeholder="Enter player O's name">
+            </div>
+            <button type="submit" id="startGame">Start</button>
+        </form>
+    </dialog>
+    <div id="container">
+        <div id="header">TIC-TAC-TOE</div>
+        <div id="dashboard">
+            <div id="sidebar">
+                <div>
+                    <p>CURRENT PLAYER</p>
+                    <p id="currentPlayer"></p>
+                    <div id="currentMarker"><span class="currentMarkerSpan"></span></div>
                 </div>
-                <div id="game">
-                    <div id="top-left" data-position="0">X</div>
-                    <div id="top-mid" data-position="1">O</div>
-                    <div id="top-right" data-position="2"></div>
-                    <div id="mid-left" data-position="3"></div>
-                    <div id="mid-mid" data-position="4"></div>
-                    <div id="mid-right" data-position="5"></div>
-                    <div id="bot-left" data-position="6"></div>
-                    <div id="bot-mid" data-position="7"></div>
-                    <div id="bot-right" data-position="8"></div>
-                </div>
+                <button id="resetButton">Reset</button>
+            </div>
+            <div id="game">
+                <div id="top-left" data-position="0"></div>
+                <div id="top-mid" data-position="1"></div>
+                <div id="top-right" data-position="2"></div>
+                <div id="mid-left" data-position="3"></div>
+                <div id="mid-mid" data-position="4"></div>
+                <div id="mid-right" data-position="5"></div>
+                <div id="bot-left" data-position="6"></div>
+                <div id="bot-mid" data-position="7"></div>
+                <div id="bot-right" data-position="8"></div>
             </div>
         </div>
+    </div>
 </body>
 </html>

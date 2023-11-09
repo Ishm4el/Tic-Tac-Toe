@@ -3,6 +3,7 @@ body, html {
     height: 100%;
     padding: 0;
     margin: 0;
+    background-image: linear-gradient(45deg, black, rgb(139, 0, 69), darkred);
 }
 
 p {
@@ -17,6 +18,7 @@ p {
     display: grid;
     grid-template-rows: 1fr 8fr;
     grid-template-areas: "above", "below";
+    visibility: show;
 }
 
 #header {
@@ -35,11 +37,41 @@ p {
 }
 
 #sidebar {
-    background-image: linear-gradient(45deg, rgb(104, 0, 0), rgb(97, 52, 97));
+    background-image: linear-gradient(45deg, rgb(104, 0, 0), rgb(97, 52, 97)); 
     display: flex;
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
+}
+
+#resetButton {
+    margin-top: auto;
+    margin-bottom: 15vh;
+    height: 7vh;
+    width: 7vh;
+    background-image: radial-gradient(red, darkred);
+}
+
+#currentMarker {
+    font-size: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentMarkerSpan {
+    background-image: linear-gradient(135deg, rgb(143, 28, 28), rgb(155, 109, 155), rgb(172, 129, 137));
+    width: 7vw;
+    height: 7vw;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.victor {
+    background-image: linear-gradient(225deg, rgb(67, 47, 177), rgb(142, 153, 185), rgb(172, 206, 202), rgb(209, 209, 255));
 }
 
 #game {
@@ -66,4 +98,52 @@ p {
     justify-content: center;
     align-items: center;
     font-size: min(15vh, 15vw);
+}
+
+dialog {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    background-image:radial-gradient(black, rgb(27, 19, 19), rgb(48, 29, 29));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: min(6vh, 6vw);
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    background-image: linear-gradient(135deg, rgb(143, 28, 28), rgb(155, 109, 155), rgb(172, 129, 137));
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    padding: min(10vh, 10vw);
+    border: 20px double black;
+}
+
+form input {
+    font-size: min(4vh, 4vw);
+    padding: 5px;
+}
+
+label {
+    font-size: min(3vh, 3vw);
+}
+
+form button {
+    padding: min(2vh, 2vw) min(15vh, 15vw);
+    font-size: min(3vh, 3vw);
+}
+
+.player-name-input {
+    display:flex;
+    flex-direction: column;
+    gap: 1vh;
 }
